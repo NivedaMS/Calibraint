@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title> Login page </title>
+	</head>
+	<body>
+		<h1> A Login Page </h1>
+	    <form name="login"> 
+
+			Username<input type="text" name="userid" id="userid"/> <br> <br>
+			Email ID<input type="text" name="emailid" id="mail"/>  <br> <br>
+			Password<input type="password" name="pswrd" id="txtPassword"/>
+			Confirm Password <input type="password" name="confirmpswrd" id="txtConfirmPassword"/> <br> <br>
+			<input type="button" onclick="check()" value="Login"/>
+			<input type="reset" value="Cancel"/>
+			
+			<p id="display1"></p>
+			<p id="display2"></p>
+			</form>
+		
+		<script language="javascript">
+			function check(){
+	
+ 				var password = document.getElementById("txtPassword").value;
+        		var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        		if (password != confirmPassword) {
+            		alert("Passwords do not match.");
+        		}
+        		document.getElementById("display1").innerText = "USERNAME:"+document.getElementById("userid").value;
+				    document.getElementById("display2").innerText = "EMAIL:"+document.getElementById("mail").value;
+				
+				var mail = document.getElementById("mail").value;
+ 
+ 				if(mail.match( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {  
+					alert("Valid email address!");  
+					document.getElementById("display1").innerText = "USERNAME:"+document.getElementById("userid").value;
+					document.getElementById("display2").innerText = "EMAIL:"+document.getElementById("mail").value;
+				} else {  
+					alert("You have entered an invalid email address!");  
+				}
+			}
+
+
+
+		</script>
+	</body>
+</html>
+ 
+ 
