@@ -1,0 +1,19 @@
+
+function printString(string, callback){
+  setTimeout(
+    () => {
+      console.log(string)
+      callback()
+    }, 
+    4000
+  )
+  console.log("done")
+}
+function printAll(){
+  printString("A", () => {
+    printString("B", () => {
+      printString("C", () => {})
+    })
+  })
+}
+printAll()
