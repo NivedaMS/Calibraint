@@ -1,0 +1,25 @@
+function printString(string){
+  return new Promise((resolve, reject) => {
+    setTimeout(
+      () => {
+       console.log(string)
+       reject()
+      }, 
+     2000
+    )
+     console.log("done")
+  })
+}
+function printAll(){
+  printString("A")
+  .then(() => {
+    return printString("B")
+  })
+  .then(() => {
+    return printString("C")
+  })
+  .catch (() => {
+    console.log("Error");
+  })
+}
+printAll()
